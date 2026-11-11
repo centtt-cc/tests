@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="rain"></div>
+
+    <div class="card">
+        <div class="heart">❤️</div>
+
+        <h1>I Love You</h1>
+
+        <p class="subtitle">Even in the rain,</p>
+        <p class="message">
+            My heart will always choose you.
+            <br>
+            You are my favorite person ❤️
+            <br>
+            For you my bb
+        </p>
+
+        <div class="bottom-heart">♥ ♥ ♥</div>
+
+        <p class="footer">Forever & Always</p>
+    </div>
+
+    <script>
+        const rain = document.querySelector('.rain');
+
+        for (let i = 0; i < 100; i++) {
+            const drop = document.createElement('span');
+
+            drop.classList.add('drop');
+            drop.style.left = Math.random() * 100 + '%';
+            drop.style.animationDuration =
+                (0.5 + Math.random() * 1.5) + 's';
+            drop.style.animationDelay =
+                Math.random() * 3 + 's';
+
+            rain.appendChild(drop);
+        }
+    </script>
+
+</body>
+
+</html>
