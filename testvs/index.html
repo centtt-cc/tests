@@ -1,98 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Love You ❤️</title>
+    <title>For You ❤️</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    
-<!-- HALAMAN PEMBUKA -->
-<div class="welcome-screen" id="welcomeScreen">
 
-    <div class="welcome-content">
-
-        <div class="welcome-heart">❤️</div>
-
-        <h1>Hey, You!</h1>
-
-        <p class="welcome-text">
-            Someone has something special for you...
-        </p>
-
-        <p class="welcome-subtitle">
-            A little surprise, just for you ❤️
-        </p>
-
-        <button id="openButton">
-            BUKA SURAT ❤️
-        </button>
-
-        <p class="welcome-footer">
-            Made with love, just for you.
-        </p>
-
-    </div>
-
-</div>
-
-
+    <!-- ANIMASI HUJAN -->
     <div class="rain"></div>
 
-    <div class="love-content" id="loveContent">
-    <div class="card">
-        <div class="heart">❤️</div>
-
-        <h1>I Love You</h1>
-
-        <p class="subtitle">Even in the rain,</p>
-        <p class="message">
-            My heart will always choose you.
-            <br>
-            You are my favorite person ❤️
-            <br>
-            For you my bb
-        </p>
-
-        <div class="bottom-heart">♥ ♥ ♥</div>
-
-        <p class="footer">Forever & Always</p>
+    <!-- FOTO MELAYANG -->
+    <div class="floating-photos">
+        <img src="images/foto1.jpg" class="photo photo1" alt="Kenangan 1">
+        <img src="images/foto2.jpg" class="photo photo2" alt="Kenangan 2">
+        <img src="images/foto3.jpg" class="photo photo3" alt="Kenangan 3">
+        <img src="images/foto4.jpg" class="photo photo4" alt="Kenangan 4">
     </div>
 
+    <!-- HALAMAN PEMBUKA -->
+    <div class="welcome-screen" id="welcomeScreen">
+
+        <div class="welcome-content">
+
+            <div class="welcome-heart">❤️</div>
+
+            <h1>Hey, You!</h1>
+
+            <p class="welcome-text">
+                Someone has something special for you...
+            </p>
+
+            <p class="welcome-subtitle">
+                A little surprise, just for you ❤️
+            </p>
+
+            <button type="button" id="openButton">
+                BUKA SURAT ❤️
+            </button>
+
+            <p class="welcome-footer">
+                Made with love, just for you.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- KONTEN KARTU CINTA -->
+    <div class="love-content" id="loveContent">
+
+        <div class="card">
+
+            <div class="heart">❤️</div>
+
+            <h1>I Love You</h1>
+
+            <p class="subtitle">
+                Even in the rain,
+            </p>
+
+            <p class="message">
+                My heart will always choose you.
+                <br>
+                You are my favorite person ❤️
+            </p>
+
+            <div class="bottom-heart">
+                ♥ ♥ ♥
+            </div>
+
+            <p class="footer">
+                Forever & Always
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
     <script>
+
+        // MEMBUAT ANIMASI HUJAN
         const rain = document.querySelector('.rain');
 
         for (let i = 0; i < 100; i++) {
+
             const drop = document.createElement('span');
 
             drop.classList.add('drop');
+
             drop.style.left = Math.random() * 100 + '%';
+
             drop.style.animationDuration =
                 (0.5 + Math.random() * 1.5) + 's';
+
             drop.style.animationDelay =
                 Math.random() * 3 + 's';
 
             rain.appendChild(drop);
         }
+
+
+        // TOMBOL BUKA SURAT
+        const openButton =
+            document.getElementById('openButton');
+
+        const welcomeScreen =
+            document.getElementById('welcomeScreen');
+
+        const loveContent =
+            document.getElementById('loveContent');
+
+
+        openButton.addEventListener('click', function () {
+
+            // Hilangkan halaman pembuka
+            welcomeScreen.classList.add('hide');
+
+            // Tampilkan kartu cinta
+            setTimeout(function () {
+
+                welcomeScreen.style.display = 'none';
+
+                loveContent.classList.add('show');
+
+            }, 1000);
+
+        });
+
     </script>
 
-const openButton = document.getElementById("openButton");
-const welcomeScreen = document.getElementById("welcomeScreen");
-const loveContent = document.getElementById("loveContent");
-
-openButton.addEventListener("click", function () {
-
-    welcomeScreen.classList.add("hide");
-
-    setTimeout(function () {
-        loveContent.classList.add("show");
-    }, 500);
-
-});
-
 </body>
-
 </html>
