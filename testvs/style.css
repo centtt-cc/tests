@@ -149,3 +149,133 @@ h1 {
         padding: 35px 20px;
     }
 }
+
+/* WELCOME SCREEN */
+.welcome-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #172554
+    );
+
+    transition: opacity 1s ease,
+                visibility 1s ease;
+}
+
+.welcome-content {
+    text-align: center;
+    padding: 35px 25px;
+    width: 90%;
+    max-width: 380px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+
+    box-shadow: 0 0 35px rgba(255,0,50,0.2);
+
+    animation: welcomeAppear 1.2s ease;
+}
+
+.welcome-heart {
+    font-size: 75px;
+    filter: drop-shadow(0 0 15px red);
+    animation: heartbeat 1s infinite;
+}
+
+.welcome-content h1 {
+    color: #ff4d6d;
+    font-size: 38px;
+    margin-top: 15px;
+}
+
+.welcome-text {
+    color: white;
+    margin-top: 18px;
+    font-size: 16px;
+}
+
+.welcome-subtitle {
+    color: #93c5fd;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+#openButton {
+    margin-top: 30px;
+    padding: 14px 30px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        45deg,
+        #ff1744,
+        #ff4d6d
+    );
+
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px rgba(255,0,50,0.5);
+
+    transition: 0.3s;
+}
+
+#openButton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px red;
+}
+
+.welcome-footer {
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+
+/* KONTEN AWAL DISEMBUNYIKAN */
+.love-content {
+    display: none;
+    position: relative;
+    z-index: 2;
+}
+
+/* KETIKA TOMBOL DIKLIK */
+.welcome-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.love-content.show {
+    display: block;
+    animation: welcomeAppear 1.5s ease;
+}
+
+@keyframes welcomeAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
