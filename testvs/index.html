@@ -79,6 +79,20 @@
         }
     </script>
 
+const openButton = document.getElementById("openButton");
+const welcomeScreen = document.getElementById("welcomeScreen");
+const loveContent = document.getElementById("loveContent");
+
+openButton.addEventListener("click", function () {
+
+    welcomeScreen.classList.add("hide");
+
+    setTimeout(function () {
+        loveContent.classList.add("show");
+    }, 500);
+
+});
+
 </body>
 
 </html>
